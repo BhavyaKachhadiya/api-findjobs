@@ -6,6 +6,9 @@ const app = express()
 app.use(express.json());
 const port = 3000
 app.use(cors());
+app.use(cors({
+  origin: 'https://api-findjobs.vercel.app'
+}));
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
